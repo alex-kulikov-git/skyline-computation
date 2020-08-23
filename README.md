@@ -11,7 +11,7 @@ The project was advised by **Maximilian E. Schüle** and supervised by **Prof. D
 The skyline of a set of tuples consists of those tuples which are not dominated by any other tuple in the set. 
 A tuple dominates another tuple if is better in at least one dimension and not worse in all the other dimensions. 
 For a more in-depth explanation of the skyline operator and its application domains, refer to: <br/>
-S. Borzsony, D. Kossmann, and K. Stocker, *The Skyline operator*, in Proceedings 17th International Conference on Data Engineering, April 2001, pp. 421–430.
+S. Borzsony, D. Kossmann, and K. Stocker, *__The Skyline Operator__*, in Proceedings 17th International Conference on Data Engineering, April 2001, pp. 421–430.
 
 ## Project Code
 The original project code can be found: 
