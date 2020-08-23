@@ -1,24 +1,23 @@
 # ARTful Skyline Computation for In-Memory Database Systems
-This work reviews and improves several state-of-the-art algorithms for Skyline computation. 
-Further, it proposes a novel, memory-efficient Skyline algorithm called S-ART-S, which bases on its predecessor ST-S. 
+The purpose of this work is to adapt and parallelize skyline computation for main memory database systems, as well as to adapt the ART tree for categorical skyline computation. 
 
-The project was advised by Maximilian E. Schüle and supervised by Prof. Dr. Alfons Kemper at the Chair for Database Systems of the Technical University of Munich (TUM). The paper was originally introduced at the ADBIS 2020 conference. 
+Skyline algorithms produce their results much faster when integrated into a database system, instead of running on top of it. Therefore, this work adjusts some of the most common skyline algorithms, so that they can be used as a building block in main memory databases. In addition to that, modern parallelization approaches are introduced and applied to the algorithms. The conducted performance tests show that the suggested parallelization approaches have been successful in reducing the computation time of the algorithms when running in parallelized environments.
 
+Moreover, the ART tree is used to develop a novel skyline algorithm called SARTS. The algorithm is able to progressively output skyline tuples in online environments, while being fast and keeping its memory usage to a minimum. As shown in the evaluation, it can keep up with its predecessor ST-S in terms of computation time, while using up to 20 times less memory at runtime.
+
+The project was advised by **Maximilian E. Schüle** and supervised by **Prof. Dr. Alfons Kemper** at the Chair for Database Systems of the Technical University of Munich (TUM). The paper was originally introduced at the ADBIS 2020 conference. 
+
+# The Skyline Operator
 The skyline of a set of tuples consists of those tuples which are not dominated by any other tuple in the set. 
 A tuple dominates another tuple if is better in at least one dimension and not worse in all the other dimensions. 
 For a more in-depth explanation of the skyline operator and its application domains, refer to: 
+S. BORZSONY, D. KOSSMANN, and K. STOCKER, *The Skyline operator*, in Proceedings 17th International Conference on Data Engineering, April 2001, pp. 421–430.
 
-The most common applications of the skyline operation include online approximation algorithms and tasks that make use of pareto optimization. 
+# Project Code
+The original project code can be found: 
+* for skyline algorithms operating on continuous tuple domains -- on [GitLab](https://gitlab.db.in.tum.de/alex_kulikov/skyline-computation).
+* for skyline algorithms operating on categorical tuple domains -- on [GitLab](https://gitlab.db.in.tum.de/alex_kulikov/skyline-categorical).
 
-Example: 
-Imagine an online search engine for holiday booking. 
-There is one user that looks to book a holiday trip to Stockholm. 
-For this purpose the user wants to get a range of suitable hotels suggested, from which he/she can make their final booking choice.
-The criteria the user prioritizes include: room costs, proximity to city center, as well as credit cards being accepted for payment. 
-As soon as the user has entered these criteria, the search engine delivers a list of hotels suggested for further review. 
-Each of the hotels from the list fulfills the following properties: 
-- There exists no other hotel which would be cheaper with other criteria kept equal
-- There exists no other hotel which would be closer to city center with other criteria kept equal
-- There exists no other hotel which would accept credit cards while the current one doesn't and other criteria kept equal. 
-The delivered set of results poses the skyline of all possible hotels in the database of the search engine. 
-It enables a fast and convenient way for the user to make his/her final choice based on smartly preselected suggestions. 
+For any inquiries contact me at [GMail](averkulikov@gmail.com). 
+
+
