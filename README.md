@@ -7,16 +7,17 @@ Moreover, the ART tree is used to develop a novel skyline algorithm called SARTS
 
 The project was advised by **Maximilian E. Schüle** and supervised by **Prof. Dr. Alfons Kemper** at the Chair for Database Systems of the Technical University of Munich (TUM). The paper was originally introduced at the ADBIS 2020 conference. 
 
-# The Skyline Operator
+## The Skyline Operator
 The skyline of a set of tuples consists of those tuples which are not dominated by any other tuple in the set. 
 A tuple dominates another tuple if is better in at least one dimension and not worse in all the other dimensions. 
 For a more in-depth explanation of the skyline operator and its application domains, refer to: 
 S. Borzsony, D. Kossmann, and K. Stocker, *The Skyline operator*, in Proceedings 17th International Conference on Data Engineering, April 2001, pp. 421–430.
 
-# Project Code
+## Project Code
 The original project code can be found: 
 * for skyline algorithms operating on continuous tuple domains on [GitLab](https://gitlab.db.in.tum.de/alex_kulikov/skyline-computation).
 * for skyline algorithms operating on categorical tuple domains on [GitLab](https://gitlab.db.in.tum.de/alex_kulikov/skyline-categorical).
+
 
 For any inquiries contact me at averkulikov@gmail.com. 
 
